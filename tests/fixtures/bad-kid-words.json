@@ -1,0 +1,24 @@
+{
+  "schema": "letterlab-kid-1",
+  "letters": {
+    "l": {
+      "kidSound": "/l/",
+      "kidSays": "L says lllll.",
+      "words": [
+        { "word": "lion", "picture": "🦁", "spoken": "Lion starts with L." },
+        { "word": "leaf", "picture": "🍃🍂" },
+        { "word": "lamp", "picture": "" },
+        { "word": "Log", "picture": "🪵" }
+      ]
+    },
+    "m": {
+      "kidSound": "mmmmm",
+      "kidSays": "Mmmmm, 2 times.",
+      "words": [
+        { "word": "moon", "picture": "🦁" },
+        { "word": "sun", "picture": "☀️" },
+        { "word": "mop", "picture": "🧹" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "letterlab-goplay-1",
+  "prompts": [
+    { "id": "toddler-duplo", "letter": "b", "stages": ["toddler"], "ages": [1, 3], "supervision": "grown-up", "picture": "🧸", "spoken": "Build a big tower with {grownups}!", "tags": ["toys"], "inventory": null },
+    { "id": "water-said", "letter": "w", "stages": ["letters"], "ages": [3, 6], "supervision": "grown-up", "picture": "🧼", "spoken": "Wash your hands at the sink with {grownups}!", "tags": ["water"], "inventory": null },
+    { "id": "park", "letter": "p", "stages": ["letters"], "ages": [3, 6], "supervision": "grown-up", "picture": "🌳", "spoken": "Next time you go to the park with {grownups}, find a pinecone!", "tags": ["outside"], "inventory": "thing.pinecone" }
+  ]
+}

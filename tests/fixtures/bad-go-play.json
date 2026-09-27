@@ -1,0 +1,13 @@
+{
+  "schema": "letterlab-goplay-1",
+  "prompts": [
+    { "id": "outside-alone", "letter": "l", "stages": ["letters"], "ages": [3, 6], "supervision": "alone", "picture": "🍃", "spoken": "Go outside and find a leaf!", "tags": ["movement"], "inventory": null },
+    { "id": "water-unsaid", "letter": "s", "stages": ["letters"], "ages": [3, 6], "supervision": "grown-up", "picture": "🧼", "spoken": "Can you wash your hands in the sink?", "tags": ["water"], "inventory": null },
+    { "id": "toddler-doh", "letter": "m", "stages": ["toddler"], "ages": [1, 3], "supervision": "grown-up", "picture": "🟣", "spoken": "Squish some Play-Doh with {grownups}!", "tags": ["playdoh"], "inventory": null },
+    { "id": "toddler-lego", "letter": "m", "stages": ["toddler"], "ages": [1, 3], "supervision": "grown-up", "picture": "🧱", "spoken": "Stack your Lego with {grownups}!", "tags": ["toys"], "inventory": null },
+    { "id": "eat", "letter": "a", "stages": ["letters"], "ages": [3, 6], "supervision": "alone", "picture": "🍎", "spoken": "Find an apple and eat it!", "tags": ["food"], "inventory": null },
+    { "id": "stranger", "letter": "s", "stages": ["letters"], "ages": [3, 6], "supervision": "alone", "picture": "👋", "spoken": "Say hello to a stranger!", "tags": [], "inventory": null },
+    { "id": "named-mom", "letter": "m", "stages": ["letters"], "ages": [3, 6], "supervision": "alone", "picture": "🐒", "spoken": "Show Mom your monkey dance!", "tags": ["movement"], "inventory": null },
+    { "id": "bad-placeholder", "letter": "m", "stages": ["letters"], "ages": [3, 6], "supervision": "alone", "picture": "🐒", "spoken": "Show {dad} your monkey dance!", "tags": ["movement"], "inventory": null }
+  ]
+}
