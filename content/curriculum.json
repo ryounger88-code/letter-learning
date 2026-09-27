@@ -1,0 +1,1063 @@
+{
+  "index": {
+    "schemaVersion": 1,
+    "note": "Teaching order is NOT alphabetical. It follows the research-based sequence (high-frequency letters, continuous sounds first, visually confusable pairs kept apart) with two deliberate overrides: L moved to first because it starts {child}'s name, and A and T pulled forward so real word-building starts by week four instead of week ten.",
+    "sourceOrder": "m s r t n p o c a d / g f b k i l h w / e v j u y z x q",
+    "teachingOrder": [
+      "l",
+      "m",
+      "s",
+      "a",
+      "t",
+      "r",
+      "n",
+      "p",
+      "o",
+      "c",
+      "d",
+      "g",
+      "f",
+      "b",
+      "k",
+      "i",
+      "h",
+      "w",
+      "e",
+      "v",
+      "j",
+      "u",
+      "y",
+      "z",
+      "x",
+      "q"
+    ],
+    "reviewEvery": 4,
+    "letters": {
+      "a": {
+        "theme": "Apples, Ants & Naming the Animals",
+        "colorKey": "orange",
+        "status": "ready"
+      },
+      "b": {
+        "theme": "Bridges, Bugs & Building",
+        "colorKey": "blue",
+        "status": "planned",
+        "seed": "Lego: a bridge you've driven over. Bible: the friends who lowered their friend through the roof."
+      },
+      "c": {
+        "theme": "Caves, Colors & Creation",
+        "colorKey": "red",
+        "status": "planned",
+        "seed": "Play-Doh: mix two colors, name the new one. Bible: the six days."
+      },
+      "d": {
+        "theme": "Dogs, Dirt & David",
+        "colorKey": "green",
+        "status": "planned",
+        "seed": "Lego: a doghouse. Bible: David and the giant — courage, not violence."
+      },
+      "e": {
+        "theme": "Eggs, Ears & Easter",
+        "colorKey": "yellow",
+        "status": "planned",
+        "seed": "Crack a real egg. Bible: the empty tomb, told gently."
+      },
+      "f": {
+        "theme": "Fish, Feathers & Friends",
+        "colorKey": "blue",
+        "status": "planned",
+        "seed": "Lego: a fishing boat. Bible: the disciples who fished."
+      },
+      "g": {
+        "theme": "Gardens, Goats & Giving",
+        "colorKey": "green",
+        "status": "planned",
+        "seed": "Plant one seed in a cup. Bible: the boy who gave his lunch."
+      },
+      "h": {
+        "theme": "Houses, Hands & Helping",
+        "colorKey": "orange",
+        "status": "planned",
+        "seed": "Lego: house on rock vs house on sand — then pour water on both."
+      },
+      "i": {
+        "theme": "Ice, Insects & Islands",
+        "colorKey": "purple",
+        "status": "planned",
+        "seed": "Freeze small toys in ice and excavate them."
+      },
+      "j": {
+        "theme": "Jars, Jumping & Jesus",
+        "colorKey": "red",
+        "status": "planned",
+        "seed": "Bible: water into wine at the wedding — the jars are the hook."
+      },
+      "k": {
+        "theme": "Kites, Keys & Kindness",
+        "colorKey": "yellow",
+        "status": "planned",
+        "seed": "Fly a kite at a windy park. Bible: the good Samaritan."
+      },
+      "l": {
+        "theme": "Light & Lighthouses",
+        "colorKey": "green",
+        "status": "ready"
+      },
+      "m": {
+        "theme": "Mountains & Moses",
+        "colorKey": "red",
+        "status": "ready"
+      },
+      "n": {
+        "theme": "Nests, Numbers & Night",
+        "colorKey": "purple",
+        "status": "planned",
+        "seed": "Build a nest from yard materials. Bible: Samuel hearing God at night."
+      },
+      "o": {
+        "theme": "Ocean, Octopus & Circles",
+        "colorKey": "blue",
+        "status": "planned",
+        "seed": "Aquarium trip tie-in. O is a circle — shape week."
+      },
+      "p": {
+        "theme": "Puddles, Patterns & Prayer",
+        "colorKey": "purple",
+        "status": "planned",
+        "seed": "Lego: repeating color patterns. Bible: how to talk to God."
+      },
+      "q": {
+        "theme": "Quilts, Queens & Questions",
+        "colorKey": "purple",
+        "status": "planned",
+        "seed": "Paper quilt squares — pattern math. Bible: Esther."
+      },
+      "r": {
+        "theme": "Rain, Rainbows & Noah",
+        "colorKey": "orange",
+        "status": "planned",
+        "seed": "Prism or water glass rainbow. Bible: Noah — God keeps promises."
+      },
+      "s": {
+        "theme": "Snakes, Sheep & Sorting",
+        "colorKey": "blue",
+        "status": "ready"
+      },
+      "t": {
+        "theme": "Trees, Trucks & Ten",
+        "colorKey": "green",
+        "status": "planned",
+        "seed": "T unlocks mat, sat, at. Count to ten with truck loads."
+      },
+      "u": {
+        "theme": "Umbrellas, Under & Up",
+        "colorKey": "yellow",
+        "status": "planned",
+        "seed": "Positional words — under, over, beside. Real umbrella weather."
+      },
+      "v": {
+        "theme": "Volcanoes, Vegetables & Voices",
+        "colorKey": "red",
+        "status": "planned",
+        "seed": "Baking soda volcano — and some mountains are volcanoes. Bible: Jericho."
+      },
+      "w": {
+        "theme": "Water, Weather & Waves",
+        "colorKey": "blue",
+        "status": "planned",
+        "seed": "Sink or float in a bowl. Bible: Jesus calms the storm."
+      },
+      "x": {
+        "theme": "X Marks the Spot",
+        "colorKey": "orange",
+        "status": "planned",
+        "seed": "Treasure map with an X. X is rare — keep it short and playful."
+      },
+      "y": {
+        "theme": "Yarn, Yellow & Yes",
+        "colorKey": "yellow",
+        "status": "planned",
+        "seed": "Yarn letter shapes glued on card. Bible: saying yes to God — Mary."
+      },
+      "z": {
+        "theme": "Zoo, Zippers & Zero",
+        "colorKey": "purple",
+        "status": "planned",
+        "seed": "Zoo trip. Zero is a real math idea — none of something."
+      }
+    }
+  },
+  "lessons": {
+    "l": {
+      "id": "l",
+      "schemaVersion": 1,
+      "subject": "alphabet",
+      "letter": "L",
+      "theme": "Light & Lighthouses",
+      "colorKey": "green",
+      "status": "ready",
+      "ageRange": [
+        3,
+        5
+      ],
+      "estimatedMinutes": 30,
+      "whyThisOrder": "Not a research-order letter — L is first because it starts {child}'s name. Name letters are the highest-motivation entry point for a 4-year-old, and recognizing {their} own name is a pre-reading milestone on its own.",
+      "sound": {
+        "phoneme": "/l/",
+        "type": "continuous",
+        "cue": "Tongue tip up behind your top teeth, and hummmm: llllll. You can hold it as long as you have breath — that's what makes it easy to blend later.",
+        "sayThis": "The letter is named 'el'. The sound it makes is /l/. Say the sound more than the name.",
+        "commonConfusion": "Lowercase l and capital I look nearly identical in most fonts. Always show l inside a word (log, lamp) rather than alone."
+      },
+      "formation": {
+        "capital": "Big line straight DOWN, then a little line ACROSS at the bottom. It looks like a chair turned sideways.",
+        "lowercase": "One tall line straight down. That's the whole letter — the easiest one in the alphabet.",
+        "prewritingStroke": "Vertical line + horizontal line. If {child} can't yet draw a straight vertical line on demand, spend the whole letter block on that and skip the paper.",
+        "practiceLadder": [
+          "Sky-write it with a finger, big",
+          "Trace it in a tray of flour or salt",
+          "Trace a marker version you drew",
+          "Write it {themself} on a blank line"
+        ]
+      },
+      "words": {
+        "target": [
+          "{child}",
+          "lion",
+          "leaf",
+          "log",
+          "lamp",
+          "lid"
+        ],
+        "stretch": [
+          "lighthouse",
+          "ladybug",
+          "lemon",
+          "ladder"
+        ]
+      },
+      "materials": [
+        "Paper and a fat marker",
+        "Lego or Duplo bricks — needs about 20, including 1 yellow and some white or grey",
+        "Play-Doh, one or two colors",
+        "A flashlight",
+        "A real leaf from the yard",
+        "Optional: shallow tray with flour or salt"
+      ],
+      "blocks": [
+        {
+          "id": "warmup",
+          "type": "warmup",
+          "title": "Find your letter",
+          "minutes": 3,
+          "parentScript": "Write {CHILD} in big capitals across a page. Point at the L. \"This one is L. It's the very first letter of your name. It says /l/.\"",
+          "steps": [
+            "Have {them} point to the L {themself}.",
+            "Write {CHILD} again but leave the first letter blank. Ask {them} what's missing.",
+            "Let {them} fill it in any way at all — a scribble counts."
+          ]
+        },
+        {
+          "id": "letter",
+          "type": "letter",
+          "title": "Making the L",
+          "minutes": 6,
+          "parentScript": "Say the sound, not the name, every time you point at it. \"Down… and across. L says /l/.\"",
+          "steps": [
+            "Sky-write a giant L with your whole arm. {child} copies.",
+            "Trace in the flour tray if you have one.",
+            "Draw three big dotted L's to trace over.",
+            "One L on {their} own. Praise the try, not the tidiness."
+          ]
+        },
+        {
+          "id": "build",
+          "type": "build",
+          "medium": "lego",
+          "title": "Build a lighthouse",
+          "minutes": 10,
+          "parentScript": "If there's a real lighthouse near you, pull up a photo of it first if that helps {them} picture it — or make it this weekend's trip.",
+          "steps": [
+            "Stack a tall tower of white and grey bricks — count each one out loud as it goes on.",
+            "Put ONE yellow brick on the very top. That's the light.",
+            "Turn off the room light and shine the flashlight on it.",
+            "Then build the letter L flat on the floor: 5 bricks going down, 3 bricks going across the bottom."
+          ],
+          "brickCount": 20,
+          "extension": "Ask {them} why a boat would want to see a light in the dark. Let {them} answer badly — the question is the point."
+        },
+        {
+          "id": "doh",
+          "type": "build",
+          "medium": "playdoh",
+          "title": "Leaf prints",
+          "minutes": 6,
+          "parentScript": "This one is fine-motor work disguised as art. Rolling and pressing builds the hand strength writing needs.",
+          "steps": [
+            "Roll a long snake, then bend it into an L.",
+            "Flatten a ball into a pancake.",
+            "Press the real leaf into it hard, then peel it off — the veins stay behind.",
+            "\"Leaf starts with /l/. Lllleaf.\""
+          ]
+        },
+        {
+          "id": "words",
+          "type": "words",
+          "title": "Listening for /l/",
+          "minutes": 4,
+          "parentScript": "Say each pair out loud and stretch the first sound. {child} votes yes or no.",
+          "steps": [
+            "\"Llllion — does that start like {child}?\" (yes)",
+            "\"Bear — does that start like {child}?\" (no)",
+            "Walk one lap of the house and find one real thing that starts with /l/ — lamp, lid, light."
+          ]
+        },
+        {
+          "id": "bible",
+          "type": "bible",
+          "title": "God made the light",
+          "minutes": 5,
+          "steps": [
+            "Sit in a dark room with the flashlight off. \"At the very beginning there was nothing to see. It was all dark.\"",
+            "Click the flashlight on. \"Then God said, Let there be light — and there was light.\"",
+            "Let {them} click it on and off a few times and say it with you.",
+            "Point back at the Lego lighthouse: \"God made light, and we get to make light too.\""
+          ]
+        },
+        {
+          "id": "move",
+          "type": "move",
+          "title": "Leaping",
+          "minutes": 3,
+          "steps": [
+            "Put 5 paper L's on the floor as stepping stones.",
+            "Leap from L to L — say /l/ on every landing.",
+            "Then leap like a lion and roar. Lion starts with L too."
+          ]
+        },
+        {
+          "id": "wrapup",
+          "type": "wrapup",
+          "title": "One question",
+          "minutes": 2,
+          "steps": [
+            "\"What's something that makes light?\"",
+            "Whatever the answer, say the /l/ sound one last time and stop. End while {child} still wants more."
+          ]
+        }
+      ],
+      "bible": {
+        "passage": "Genesis 1:3",
+        "story": "On the very first day of making the world, God spoke and light came.",
+        "bigIdea": "God made the light.",
+        "memoryPhrase": "God said, Let there be light.",
+        "translation": "KJV",
+        "note": "Four-year-olds hold about five words. Don't extend the phrase."
+      },
+      "math": {
+        "skill": "Counting with one-to-one correspondence, 1–10",
+        "how": "Count each brick out loud as it goes onto the lighthouse tower. Touching one object per number word is the actual skill — reciting numbers fast is not."
+      },
+      "media": [
+        {
+          "kind": "youtube-search",
+          "label": "Letter L song",
+          "query": "jack hartmann letter l",
+          "channelHint": "Jack Hartmann Kids Music Channel"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "L in action",
+          "query": "alphablocks letter l",
+          "channelHint": "Alphablocks — shows letters making sounds inside words"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "Creation story for preschoolers",
+          "query": "creation story for kids day one light",
+          "channelHint": "Saddleback Kids / Crossroads Kids Club"
+        }
+      ],
+      "books": [
+        {
+          "title": "Chicka Chicka Boom Boom",
+          "author": "Bill Martin Jr.",
+          "why": "The alphabet book that actually holds a 4-year-old. Read it any letter week."
+        },
+        {
+          "title": "Leaf Man",
+          "author": "Lois Ehlert",
+          "why": "Pairs directly with the leaf print."
+        }
+      ],
+      "wrapUp": "What's something that makes light?",
+      "adaptations": {
+        "ifTooHard": "Drop the paper writing entirely. Flour-tray tracing and the Lego L are enough — letter formation on paper often isn't ready at four.",
+        "ifTooEasy": "Write {CHILD} and let {them} copy the whole name. Or add a second yellow brick and ask how many lights now.",
+        "ifWiggly": "Go straight to the leaping block, then come back. Movement first is not a failure mode, it's a strategy."
+      },
+      "tags": [
+        "name-letter",
+        "creation",
+        "fine-motor",
+        "counting",
+        "local-trip"
+      ]
+    },
+    "m": {
+      "id": "m",
+      "schemaVersion": 1,
+      "subject": "alphabet",
+      "letter": "M",
+      "theme": "Mountains & Moses",
+      "colorKey": "red",
+      "status": "ready",
+      "ageRange": [
+        3,
+        5
+      ],
+      "estimatedMinutes": 30,
+      "whyThisOrder": "First letter in the research-based sequence. /m/ is the easiest sound in English to produce and hold, the letter is visually distinct from everything else, and it starts a word {child} already says all the time.",
+      "sound": {
+        "phoneme": "/m/",
+        "type": "continuous",
+        "cue": "Lips closed, hum: mmmmm. Like tasting something good. It buzzes — put {their} fingers on your lips, then on {their} own.",
+        "sayThis": "The letter is named 'em'. The sound is /m/. Lead with the sound.",
+        "commonConfusion": "m and w are the same shape flipped. Don't teach w anywhere near this week."
+      },
+      "formation": {
+        "capital": "Down, slant down, slant up, down. Like two mountains side by side.",
+        "lowercase": "Down, then a hump, then another hump. \"Down, over the hill, over the hill again.\"",
+        "prewritingStroke": "Vertical line plus diagonal. Diagonals are harder than verticals at four — expect wobble.",
+        "practiceLadder": [
+          "Sky-write it big",
+          "Trace in flour or shaving cream",
+          "Trace your dotted version",
+          "Freehand"
+        ]
+      },
+      "words": {
+        "target": [
+          "mom",
+          "moon",
+          "map",
+          "milk",
+          "mud",
+          "mat"
+        ],
+        "stretch": [
+          "mountain",
+          "muffin",
+          "marshmallow",
+          "Moses"
+        ]
+      },
+      "materials": [
+        "Paper and a fat marker",
+        "Lego or Duplo — about 25 bricks, with several white ones",
+        "Play-Doh",
+        "A muffin tin or 6 cups",
+        "A basket or small container and a doll or stuffed animal",
+        "A towel or blanket"
+      ],
+      "blocks": [
+        {
+          "id": "warmup",
+          "type": "warmup",
+          "title": "The buzzing sound",
+          "minutes": 3,
+          "parentScript": "\"Put your fingers on my lips. Mmmmmmm. Feel that? Now you do it.\"",
+          "steps": [
+            "Hum /m/ together with fingers on lips.",
+            "\"Mmmmom. Mmmmilk. What else starts that way?\"",
+            "Write a big M and a small m on paper and leave them visible all session."
+          ]
+        },
+        {
+          "id": "letter",
+          "type": "letter",
+          "title": "Two mountains",
+          "minutes": 6,
+          "parentScript": "Use the mountain language every single time — it's the hook that makes the shape memorable.",
+          "steps": [
+            "Draw a huge M and say \"down, up the mountain, down the valley, up the mountain, down.\"",
+            "{child} sky-writes it.",
+            "Trace three dotted M's.",
+            "Try one on {their} own. Two humps is the goal; evenness is not."
+          ]
+        },
+        {
+          "id": "build",
+          "type": "build",
+          "medium": "lego",
+          "title": "Build a snowy mountain",
+          "minutes": 10,
+          "parentScript": "If you can see a mountain from a window, look at it first. Otherwise pull up a photo of a snowy one.",
+          "steps": [
+            "Build a wide base row, then a shorter row on top, then shorter again — a staircase going up both sides.",
+            "Put white bricks on the top three rows. That's the snow.",
+            "Count how many rows tall it got.",
+            "Then build a capital M flat on the floor: two towers with a V of bricks between them."
+          ],
+          "brickCount": 25,
+          "extension": "\"Why is the snow only on top?\" Let {them} guess. Then: it's colder way up high. That's {their} first science fact about a real mountain."
+        },
+        {
+          "id": "doh",
+          "type": "build",
+          "medium": "playdoh",
+          "title": "Six muffins",
+          "minutes": 6,
+          "steps": [
+            "Roll six balls and press one into each cup of the muffin tin.",
+            "Count them: 1, 2, 3, 4, 5, 6 — touch each one as you say it.",
+            "Take two out. How many are left? Count again.",
+            "Roll one long snake and bend it into an M."
+          ]
+        },
+        {
+          "id": "words",
+          "type": "words",
+          "title": "Mmm or not?",
+          "minutes": 4,
+          "steps": [
+            "Say a word, stretched: \"Mmmmap.\" Thumbs up if it starts with /m/.",
+            "Mix in some that don't: dog, moon, cup, mud, fish, milk.",
+            "Then go find something in the kitchen that starts with /m/."
+          ]
+        },
+        {
+          "id": "bible",
+          "type": "bible",
+          "title": "Baby Moses in the basket",
+          "minutes": 6,
+          "parentScript": "Keep the danger vague. The point is not Pharaoh — the point is that God took care of a baby, and takes care of {them}.",
+          "steps": [
+            "Put the doll in the basket. \"There was a baby named Moses. His mom loved him so much and wanted him safe.\"",
+            "Float or slide the basket along the blanket like a river.",
+            "\"A princess found him and kept him safe. God was taking care of Moses the whole time.\"",
+            "\"God takes care of you too.\" Let {them} carry the basket around."
+          ]
+        },
+        {
+          "id": "move",
+          "type": "move",
+          "title": "March",
+          "minutes": 3,
+          "steps": [
+            "March around the room saying /m/ /m/ /m/ on each step.",
+            "Freeze when you say STOP.",
+            "Then climb the couch like a mountain."
+          ]
+        },
+        {
+          "id": "wrapup",
+          "type": "wrapup",
+          "title": "One question",
+          "minutes": 2,
+          "steps": [
+            "\"Who takes care of you?\"",
+            "Whatever {child} names — you, family, Jesus, the dog — take it. Then done."
+          ]
+        }
+      ],
+      "bible": {
+        "passage": "Exodus 2:1–10",
+        "story": "Baby Moses is hidden in a basket on the river, and God keeps him safe.",
+        "bigIdea": "God takes care of me.",
+        "memoryPhrase": "God takes care of me.",
+        "translation": "n/a — paraphrase",
+        "note": "Alternative if you'd rather: manna in the desert (Exodus 16), big idea 'God gives me what I need.' Also an M."
+      },
+      "math": {
+        "skill": "Counting to 6, and taking away",
+        "how": "The muffins. Six out, take two away, count what's left. Subtraction at four means physically removing objects — never symbols."
+      },
+      "media": [
+        {
+          "kind": "youtube-search",
+          "label": "Letter M song",
+          "query": "jack hartmann letter m",
+          "channelHint": "Jack Hartmann Kids Music Channel"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "M in action",
+          "query": "alphablocks letter m",
+          "channelHint": "Alphablocks"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "Baby Moses story",
+          "query": "baby moses basket story for kids",
+          "channelHint": "Saddleback Kids"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "Snowy mountain from above",
+          "query": "snowy mountain drone 4k",
+          "channelHint": "Watch 60 seconds of it, not the whole video"
+        }
+      ],
+      "books": [
+        {
+          "title": "If You Give a Moose a Muffin",
+          "author": "Laura Numeroff",
+          "why": "Two M words in the title and {child} will ask for it again."
+        },
+        {
+          "title": "Goodnight Moon",
+          "author": "Margaret Wise Brown",
+          "why": "Moon. And it's already in the bedtime rotation."
+        }
+      ],
+      "wrapUp": "Who takes care of you?",
+      "adaptations": {
+        "ifTooHard": "Skip the lowercase m entirely — two humps is a lot of motor control. Capital M only.",
+        "ifTooEasy": "{child} now knows M and L. Write 'am' and 'ma' and stretch them out loud. Blending two sounds is the next real milestone.",
+        "ifWiggly": "March first, mountain second, everything else optional."
+      },
+      "tags": [
+        "research-order-1",
+        "counting",
+        "subtraction",
+        "old-testament",
+        "local-trip",
+        "science-weather"
+      ]
+    },
+    "s": {
+      "id": "s",
+      "schemaVersion": 1,
+      "subject": "alphabet",
+      "letter": "S",
+      "theme": "Snakes, Sheep & Sorting",
+      "colorKey": "blue",
+      "status": "ready",
+      "ageRange": [
+        3,
+        5
+      ],
+      "estimatedMinutes": 30,
+      "whyThisOrder": "Second in the research sequence. Another continuous sound to hold and stretch, and capital S and lowercase s are the same shape at two sizes — one of the only letters where that's true, so it's double value for one lesson.",
+      "sound": {
+        "phoneme": "/s/",
+        "type": "continuous",
+        "cue": "Teeth together, air hissing out: sssssss. Like a snake, like a leaky tire.",
+        "sayThis": "The letter is named 'ess' — which already contains its own sound, so this one is easy to confuse in a helpful direction.",
+        "commonConfusion": "S gets written backwards constantly at this age. Reversals are developmentally normal until about 7 — correct gently once, then let it go."
+      },
+      "formation": {
+        "capital": "Start at the top, curve back toward the door, then swing around the other way. Two curves that disagree.",
+        "lowercase": "Exactly the same, just smaller. Say so — it's a gift.",
+        "prewritingStroke": "The S-curve is the hardest stroke in this batch. Do it in Play-Doh and in the air many times before any pencil touches paper.",
+        "practiceLadder": [
+          "Trace a giant S you drew, with a finger",
+          "Roll it in Play-Doh",
+          "Trace in flour",
+          "Marker on paper"
+        ]
+      },
+      "words": {
+        "target": [
+          "sun",
+          "sit",
+          "sock",
+          "sad",
+          "sap",
+          "Sam"
+        ],
+        "stretch": [
+          "star",
+          "snake",
+          "salmon",
+          "sheep",
+          "seven"
+        ]
+      },
+      "materials": [
+        "Paper and a fat marker",
+        "Lego or Duplo — a good handful in at least 4 colors",
+        "Play-Doh",
+        "Cotton balls and a paper plate or cardboard",
+        "A small toy sheep or any stuffed animal",
+        "Optional: star cookie cutter"
+      ],
+      "blocks": [
+        {
+          "id": "warmup",
+          "type": "warmup",
+          "title": "Snake sound",
+          "minutes": 3,
+          "steps": [
+            "Hiss together. Long as you can, then longer.",
+            "\"Sssssun. Sssssock. Sssssnake.\"",
+            "Draw a big S and trace it with a finger while hissing — the sound lasts as long as the finger moves. That link matters more than it looks."
+          ]
+        },
+        {
+          "id": "build",
+          "type": "build",
+          "medium": "lego",
+          "title": "Sort, then snake",
+          "minutes": 10,
+          "parentScript": "Sorting by one attribute is a real pre-math skill and it looks like cleanup. Do the sorting first while {their} attention is fresh.",
+          "steps": [
+            "Dump the bricks out. Sort them into color piles — one pile per color.",
+            "Count each pile. Which pile is biggest? That's comparing quantities.",
+            "Now build a snake: one long wiggly line of bricks, offset left and right so it bends.",
+            "Make it hiss across the floor."
+          ],
+          "brickCount": 30,
+          "extension": "Sort the same bricks a second way — by size instead of color. Understanding that the same objects can be grouped differently is a genuine cognitive jump."
+        },
+        {
+          "id": "letter",
+          "type": "letter",
+          "title": "The two curves",
+          "minutes": 6,
+          "steps": [
+            "Roll a Play-Doh snake, then curl it into an S. Do it three times.",
+            "Sky-write the S big, slow, narrating the two curves.",
+            "Trace three dotted S's on paper.",
+            "One on {their} own. If it's backwards, say \"good S!\" and draw one next to it facing the right way. That's the whole correction."
+          ]
+        },
+        {
+          "id": "bible",
+          "type": "bible",
+          "title": "The lost sheep",
+          "minutes": 8,
+          "parentScript": "This is the most interactive Bible block in the set. Play it like hide and seek, because that's what it is.",
+          "steps": [
+            "Glue or press cotton balls onto the plate to make a sheep. Add a face.",
+            "\"A shepherd had 100 sheep. One got lost. Do you know what he did? He went and looked until he found it.\"",
+            "Hide the toy sheep while {child} covers {their} eyes. Let {them} search.",
+            "When {child} finds it — \"That's how happy Jesus is about YOU.\"",
+            "Say it together: \"The Lord is my shepherd.\""
+          ]
+        },
+        {
+          "id": "words",
+          "type": "words",
+          "title": "Sound hunt",
+          "minutes": 4,
+          "steps": [
+            "Walk the house and find three things starting with /s/ — sock, soap, spoon, stairs, sink.",
+            "Line them up and hiss each one.",
+            "If {child} already knows M and A: write 'Sam' and stretch it — ssss-aaaa-mmm. Blending may or may not happen yet. Either is fine."
+          ]
+        },
+        {
+          "id": "move",
+          "type": "move",
+          "title": "Slither and stomp",
+          "minutes": 3,
+          "steps": [
+            "Slither across the floor on your bellies like snakes.",
+            "Stomp like something heavy. Both start with /s/.",
+            "Spin — then stop. Stop starts with S too."
+          ]
+        },
+        {
+          "id": "wrapup",
+          "type": "wrapup",
+          "title": "One question",
+          "minutes": 2,
+          "steps": [
+            "\"Can you find one more thing that starts with sssss?\"",
+            "One is enough. End on a win."
+          ]
+        }
+      ],
+      "bible": {
+        "passage": "Luke 15:4–6, Psalm 23:1",
+        "story": "A shepherd leaves the whole flock to find one sheep that wandered off, and carries it home happy.",
+        "bigIdea": "Jesus looks for me and is glad when He finds me.",
+        "memoryPhrase": "The Lord is my shepherd.",
+        "translation": "KJV",
+        "note": "Five words, and it's the single most useful verse fragment a kid can carry into adulthood."
+      },
+      "math": {
+        "skill": "Sorting and classifying by attribute; comparing 'more' and 'fewer'",
+        "how": "The color piles. Sorting precedes counting developmentally — it's how a child learns that things belong to groups at all."
+      },
+      "media": [
+        {
+          "kind": "youtube-search",
+          "label": "Letter S song",
+          "query": "jack hartmann letter s",
+          "channelHint": "Jack Hartmann Kids Music Channel"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "S in action",
+          "query": "alphablocks letter s",
+          "channelHint": "Alphablocks"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "The lost sheep",
+          "query": "parable of the lost sheep for kids",
+          "channelHint": "Saddleback Kids / Crossroads Kids Club"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "Salmon swimming upstream",
+          "query": "salmon swimming upstream",
+          "channelHint": "Pairs with a fall salmon-run field trip, if there's one near you"
+        }
+      ],
+      "books": [
+        {
+          "title": "The Sheep in the Shop",
+          "author": "Nancy Shaw",
+          "why": "Rhyme plus a wall of S sounds."
+        },
+        {
+          "title": "Sheep in a Jeep",
+          "author": "Nancy Shaw",
+          "why": "Same series, short, and it earns rereads."
+        }
+      ],
+      "wrapUp": "Can you find one more thing that starts with sssss?",
+      "adaptations": {
+        "ifTooHard": "Skip written S entirely. Play-Doh S and the sound hunt carry the whole lesson.",
+        "ifTooEasy": "{child} has M, S, and A after this batch. Write 'Sam', 'am', 'as' on cards and stretch-read them together.",
+        "ifWiggly": "Lead with the lost sheep hide-and-seek. It's movement and Bible at once."
+      },
+      "tags": [
+        "research-order-2",
+        "sorting",
+        "classification",
+        "parable",
+        "fine-motor",
+        "local-trip"
+      ]
+    },
+    "a": {
+      "id": "a",
+      "schemaVersion": 1,
+      "subject": "alphabet",
+      "letter": "A",
+      "theme": "Apples, Ants & Naming the Animals",
+      "colorKey": "orange",
+      "status": "ready",
+      "ageRange": [
+        3,
+        5
+      ],
+      "estimatedMinutes": 32,
+      "whyThisOrder": "The first vowel, and the one that unlocks words. With M, S and A, {child} can build 'am', 'as', 'Sam', 'mas' — the moment letters stop being decorations and start being a code. Teach the SHORT sound first; the long name 'ay' comes much later.",
+      "sound": {
+        "phoneme": "/a/ as in apple",
+        "type": "short vowel",
+        "cue": "Mouth open, doctor-says-ahh but shorter: /a/ /a/ apple. Tap your chin on each one.",
+        "sayThis": "This is the one place the letter's NAME actively misleads. The letter is named 'ay' but it says /a/. Say the sound almost exclusively this week.",
+        "commonConfusion": "Don't mention the long A sound at all yet. One sound per letter until the code is solid."
+      },
+      "formation": {
+        "capital": "Slant down this way, slant down that way, then a belt across the middle. Like a tent with a bar.",
+        "lowercase": "Around, and down. One circle and one line — the 'a' in most books has a curl on top, but the one to write is round.",
+        "prewritingStroke": "Circle plus vertical line. {child} can probably already do both — this is the first letter that puts two known strokes together.",
+        "practiceLadder": [
+          "Sky-write",
+          "Play-Doh circle plus stick",
+          "Trace dotted",
+          "Freehand"
+        ]
+      },
+      "words": {
+        "target": [
+          "apple",
+          "ant",
+          "at",
+          "am",
+          "as",
+          "add"
+        ],
+        "stretch": [
+          "alligator",
+          "astronaut",
+          "arm",
+          "ax"
+        ]
+      },
+      "materials": [
+        "Paper and a fat marker",
+        "Lego or Duplo — about 20, with brown/dark, green, and several red 1x1s",
+        "Play-Doh, red and brown or green",
+        "A plastic knife or craft stick",
+        "6–8 stuffed animals",
+        "A real apple"
+      ],
+      "blocks": [
+        {
+          "id": "warmup",
+          "type": "warmup",
+          "title": "The apple sound",
+          "minutes": 3,
+          "steps": [
+            "Hold up the real apple. \"/a/ /a/ apple.\" Tap your chin each time.",
+            "{child} copies. Do it five times — it's short and choppy, not stretchy like M and S, and that difference is worth noticing.",
+            "Cut the apple in half crosswise so the seeds make a star. Let {them} see it before anyone eats it."
+          ]
+        },
+        {
+          "id": "letter",
+          "type": "letter",
+          "title": "Tent with a belt",
+          "minutes": 6,
+          "steps": [
+            "Draw a big capital A: \"slant, slant, belt.\"",
+            "Sky-write it three times.",
+            "Then lowercase a: \"around, and down.\" Make the circle first, every time.",
+            "Trace dotted versions, then one freehand."
+          ]
+        },
+        {
+          "id": "build",
+          "type": "build",
+          "medium": "lego",
+          "title": "Apple tree",
+          "minutes": 10,
+          "steps": [
+            "Build a brown trunk — a tall stack of dark bricks.",
+            "Put a wide green plate or a flat spread of green bricks on top for leaves.",
+            "Stick red 1x1 bricks on as apples. Count them on.",
+            "Pick three apples off. How many are left? Count again.",
+            "Then build the capital A: two slanted stacks leaning toward each other with one brick across the middle."
+          ],
+          "brickCount": 20,
+          "extension": "Ask where apples come from before the store. Trees, then seeds. Show {them} the seeds in the real apple you cut. That's a life-cycle conversation and it costs nothing."
+        },
+        {
+          "id": "doh",
+          "type": "build",
+          "medium": "playdoh",
+          "title": "Apples in half",
+          "minutes": 6,
+          "steps": [
+            "Roll three red balls. Add a brown stem to each.",
+            "Cut one in half with the plastic knife. \"Now there are two HALVES. Two halves make one apple.\"",
+            "Put them back together. Take them apart again. Do it as many times as {child} wants.",
+            "Then make an ant: three small balls in a row, six tiny legs."
+          ]
+        },
+        {
+          "id": "bible",
+          "type": "bible",
+          "title": "Adam names the animals",
+          "minutes": 8,
+          "parentScript": "This is the Bible story most likely to make a four-year-old feel like a participant. Let {them} take {their} time.",
+          "steps": [
+            "Line up every stuffed animal in the house in a row.",
+            "\"When God made the world, He made every single animal. Then He brought them all to the first man — his name was Adam — and let Adam give them their names.\"",
+            "\"You get to be Adam. What should we call this one?\"",
+            "Let {them} name every one. Write the names down, badly spelled, and keep the list.",
+            "\"God made every animal. And He let people help take care of them.\""
+          ]
+        },
+        {
+          "id": "words",
+          "type": "words",
+          "title": "The code cracks open",
+          "minutes": 5,
+          "parentScript": "This is the big one. If {child} blends even one word, that's the milestone — mark it in the log.",
+          "steps": [
+            "Write 'am' in big letters. Point at each letter: \"/a/… /m/… what's that word?\"",
+            "Stretch it together slowly: aaaammmm. Then faster. Then: am.",
+            "Try 'as'. Then 'Sam' with three sounds.",
+            "If it doesn't click, say the word yourself cheerfully and move on. It clicks on its own schedule."
+          ]
+        },
+        {
+          "id": "move",
+          "type": "move",
+          "title": "Ant crawl",
+          "minutes": 3,
+          "steps": [
+            "Crawl like ants carrying something heavy on your backs.",
+            "Ants can lift things way bigger than they are — let {them} try carrying a couch cushion.",
+            "Then be an alligator: arms out, snap, /a/ /a/ /a/."
+          ]
+        },
+        {
+          "id": "wrapup",
+          "type": "wrapup",
+          "title": "One question",
+          "minutes": 2,
+          "steps": [
+            "\"If you found a brand new animal nobody has ever seen, what would you name it?\"",
+            "Write down whatever {child} says. Keep it. These are the notes you'll want in ten years."
+          ]
+        }
+      ],
+      "bible": {
+        "passage": "Genesis 2:19–20",
+        "story": "God brings every animal He made to Adam, and Adam gives each one its name.",
+        "bigIdea": "God made every animal, and He lets us help take care of them.",
+        "memoryPhrase": "God made every animal.",
+        "translation": "n/a — paraphrase",
+        "note": "Alternative if you'd rather: Noah's Ark (Genesis 6–9). Also an A, and also full of animals."
+      },
+      "math": {
+        "skill": "Counting to 10, taking away, and first exposure to halves",
+        "how": "Apples on the tree for counting and subtraction. Cutting the Play-Doh apple in half is {their} first fraction — physical, reversible, and named out loud."
+      },
+      "media": [
+        {
+          "kind": "youtube-search",
+          "label": "Letter A song, short sound",
+          "query": "jack hartmann letter a short sound",
+          "channelHint": "Jack Hartmann — make sure the video teaches the short /a/, not the letter name"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "A in action",
+          "query": "alphablocks letter a",
+          "channelHint": "Alphablocks"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "Adam names the animals",
+          "query": "adam names the animals bible story for kids",
+          "channelHint": "Saddleback Kids"
+        },
+        {
+          "kind": "youtube-search",
+          "label": "How apples grow",
+          "query": "how apples grow for kids seed to tree",
+          "channelHint": "Pairs with the seeds in the real apple"
+        }
+      ],
+      "books": [
+        {
+          "title": "Ten Apples Up On Top!",
+          "author": "Dr. Seuss",
+          "why": "Counting to ten and A words in one book."
+        },
+        {
+          "title": "The Very Hungry Caterpillar",
+          "author": "Eric Carle",
+          "why": "Opens on an apple, and the counting is built in."
+        }
+      ],
+      "wrapUp": "If you found a brand new animal nobody has ever seen, what would you name it?",
+      "adaptations": {
+        "ifTooHard": "Skip the blending block. Apples, ants, and naming animals is a full lesson on its own. Blending will come back around.",
+        "ifTooEasy": "Add 'mat', 'sat', 'at' — that needs T, but you can teach it on the spot in two minutes if {child} is hungry for it.",
+        "ifWiggly": "Animal naming first. It's sitting-still work that doesn't feel like it."
+      },
+      "tags": [
+        "research-order-9",
+        "first-vowel",
+        "blending",
+        "counting",
+        "fractions",
+        "creation",
+        "life-cycle"
+      ]
+    }
+  }
+}
