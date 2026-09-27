@@ -1,0 +1,191 @@
+{
+  "schema": "letterlab-sounds-1",
+  "note": "The sound each letter is taught with. 'group' is what find-it compares: letters in the same group (c and k) are never distractors for each other. 'arpabet' is for the phonetic validator (v1.1).",
+  "letters": {
+    "a": {
+      "group": "ae",
+      "arpabet": [
+        "AE"
+      ],
+      "kind": "short-vowel"
+    },
+    "b": {
+      "group": "b",
+      "arpabet": [
+        "B"
+      ],
+      "kind": "stop"
+    },
+    "c": {
+      "group": "k",
+      "arpabet": [
+        "K"
+      ],
+      "kind": "stop"
+    },
+    "d": {
+      "group": "d",
+      "arpabet": [
+        "D"
+      ],
+      "kind": "stop"
+    },
+    "e": {
+      "group": "eh",
+      "arpabet": [
+        "EH"
+      ],
+      "kind": "short-vowel"
+    },
+    "f": {
+      "group": "f",
+      "arpabet": [
+        "F"
+      ],
+      "kind": "continuous"
+    },
+    "g": {
+      "group": "g",
+      "arpabet": [
+        "G"
+      ],
+      "kind": "stop"
+    },
+    "h": {
+      "group": "hh",
+      "arpabet": [
+        "HH"
+      ],
+      "kind": "continuous"
+    },
+    "i": {
+      "group": "ih",
+      "arpabet": [
+        "IH"
+      ],
+      "kind": "short-vowel"
+    },
+    "j": {
+      "group": "jh",
+      "arpabet": [
+        "JH"
+      ],
+      "kind": "continuous"
+    },
+    "k": {
+      "group": "k",
+      "arpabet": [
+        "K"
+      ],
+      "kind": "stop"
+    },
+    "l": {
+      "group": "l",
+      "arpabet": [
+        "L"
+      ],
+      "kind": "continuous"
+    },
+    "m": {
+      "group": "m",
+      "arpabet": [
+        "M"
+      ],
+      "kind": "continuous"
+    },
+    "n": {
+      "group": "n",
+      "arpabet": [
+        "N"
+      ],
+      "kind": "continuous"
+    },
+    "o": {
+      "group": "aa",
+      "arpabet": [
+        "AA"
+      ],
+      "kind": "short-vowel"
+    },
+    "p": {
+      "group": "p",
+      "arpabet": [
+        "P"
+      ],
+      "kind": "stop"
+    },
+    "q": {
+      "group": "kw",
+      "arpabet": [
+        "K",
+        "W"
+      ],
+      "kind": "stop"
+    },
+    "r": {
+      "group": "r",
+      "arpabet": [
+        "R"
+      ],
+      "kind": "continuous"
+    },
+    "s": {
+      "group": "s",
+      "arpabet": [
+        "S"
+      ],
+      "kind": "continuous"
+    },
+    "t": {
+      "group": "t",
+      "arpabet": [
+        "T"
+      ],
+      "kind": "stop"
+    },
+    "u": {
+      "group": "ah",
+      "arpabet": [
+        "AH"
+      ],
+      "kind": "short-vowel"
+    },
+    "v": {
+      "group": "v",
+      "arpabet": [
+        "V"
+      ],
+      "kind": "continuous"
+    },
+    "w": {
+      "group": "w",
+      "arpabet": [
+        "W"
+      ],
+      "kind": "continuous"
+    },
+    "x": {
+      "group": "ks",
+      "arpabet": [
+        "K",
+        "S"
+      ],
+      "kind": "continuous",
+      "position": "end"
+    },
+    "y": {
+      "group": "y",
+      "arpabet": [
+        "Y"
+      ],
+      "kind": "continuous"
+    },
+    "z": {
+      "group": "z",
+      "arpabet": [
+        "Z"
+      ],
+      "kind": "continuous"
+    }
+  }
+}

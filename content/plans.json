@@ -1,0 +1,14 @@
+{
+  "schema": "letterlab-plans-1",
+  "note": "Every kid activity module is listed here. The app and the offline cache both read this list, so adding an activity is a new file plus one line here.",
+  "activities": {
+    "hear-it": "js/kid/activities/hear-it.js",
+    "words": "js/kid/activities/words.js",
+    "find-it": "js/kid/activities/find-it.js",
+    "star": "js/kid/activities/star.js",
+    "go-play": "js/kid/activities/go-play.js"
+  },
+  "journeys": {
+    "letter": ["hear-it", "words", "find-it", "star", "go-play"]
+  }
+}

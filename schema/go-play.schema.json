@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "letterlab-goplay-1",
+  "title": "Go-play prompts (content/go-play.json)",
+  "description": "Off-screen, hands-on prompts that end a letter journey. Safety rules beyond this shape are enforced by tools/validate.mjs.",
+  "type": "object",
+  "required": ["schema", "prompts"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "letterlab-goplay-1" },
+    "prompts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "letter", "stages", "ages", "supervision", "picture", "spoken", "tags"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "letter": { "type": "string", "pattern": "^[a-z]$" },
+          "stages": { "type": "array", "minItems": 1, "items": { "enum": ["toddler", "letters"] } },
+          "ages": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "integer", "minimum": 1, "maximum": 12 } },
+          "supervision": { "enum": ["alone", "grown-up"] },
+          "picture": { "type": "string", "minLength": 1 },
+          "spoken": { "type": "string", "minLength": 1, "maxLength": 160 },
+          "tags": { "type": "array", "items": { "enum": ["outside", "water", "kitchen", "climbing", "tools", "food", "small-objects", "playdoh", "music", "movement", "toys", "art"] } },
+          "inventory": { "type": ["string", "null"], "description": "Later: an item from the family's 'things we have at home' list, e.g. 'toy.lion'. Ignored for now." },
+          "flag": { "type": "string" }
+        }
+      }
+    }
+  }
+}

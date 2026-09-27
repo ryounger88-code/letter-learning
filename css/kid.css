@@ -1,0 +1,180 @@
+/* Kid mode. K-numbers are the checklist in CLAUDE.md.
+   Calm ground (mist, ridgeline), one ringed target at a time, nothing to read but letters and words (K1). */
+
+html.in-kid, html.in-kid body { overflow: hidden; overscroll-behavior: none; height: 100%; }
+
+.kid {
+  position: fixed; inset: 0; z-index: 10; overflow: hidden;
+  font-family: var(--font-glyph); color: var(--ink);
+  -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  --edge: 18px;
+  --top: calc(env(safe-area-inset-top, 0px) + var(--edge));
+  --hdr: calc(var(--top) + var(--kid-home) + 10px);
+  --vh: 100vh;
+}
+@supports (height: 100dvh) { .kid { --vh: 100dvh; } }
+:where(.kid) button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; } /* :where = no specificity, so component rules win */
+
+.kid-bg { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, var(--mist) 0%, #fff 60%, #fdf4f3 100%); }
+.kid[data-screen="wake"] .kid-bg { background: var(--mist); }
+.kid-bg .ridge { height: clamp(40px, 10vh, 90px); }
+
+.kid-stage {
+  position: absolute; left: 0; right: 0; top: var(--hdr); bottom: 0;
+  padding: 6px calc(env(safe-area-inset-right, 0px) + var(--edge)) calc(env(safe-area-inset-bottom, 0px) + var(--edge)) calc(env(safe-area-inset-left, 0px) + var(--edge));
+  display: flex; align-items: center; justify-content: center;
+}
+.kid[data-screen="wake"] .kid-stage { top: 0; }
+.kid[data-screen="pick"] .kid-stage { align-items: flex-start; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; touch-action: pan-y; }
+
+/* ---------- chrome: home (K7), gate (K9), star strip ---------- */
+.kid-home { position: absolute; z-index: 5; top: var(--top); left: calc(env(safe-area-inset-left, 0px) + var(--edge)); }
+.kid[data-screen="wake"] .kid-home, .kid[data-screen="wake"] .kid-strip { display: none; }
+.kid-gate { position: absolute; z-index: 6; top: 0; right: 0; touch-action: none;
+  width: calc(var(--kid-home) + var(--edge) * 2 + env(safe-area-inset-right, 0px)); height: var(--hdr); }
+.gate-ring { position: absolute; top: var(--top); right: calc(var(--edge) + env(safe-area-inset-right, 0px)); width: var(--kid-home); height: var(--kid-home); opacity: 0; }
+.gate-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.gate-ring circle { fill: rgba(255,255,255,.7); stroke: var(--teal); stroke-width: 4; stroke-dasharray: 101; stroke-dashoffset: 101; }
+.kid-gate.holding .gate-ring { opacity: 1; }
+.kid-gate.holding .gate-ring circle { stroke-dashoffset: 0; transition: stroke-dashoffset 2s linear; }
+.kid-strip { position: absolute; z-index: 4; top: var(--top); height: var(--kid-home);
+  left: calc(env(safe-area-inset-left, 0px) + var(--edge) * 2 + var(--kid-home));
+  right: calc(env(safe-area-inset-right, 0px) + var(--edge) * 3 + var(--kid-home));
+  display: flex; align-items: center; justify-content: center; gap: 0; overflow: hidden; }
+.kid-strip .star { width: 36px; height: 36px; flex: 0 0 auto; display: block; }
+.kid-strip .star svg, .big-star svg { width: 100%; height: 100%; display: block; }
+.s-red { color: var(--k-red); } .s-orange { color: var(--k-orange); } .s-yellow { color: var(--k-yellow); }
+.s-green { color: var(--k-green); } .s-blue { color: var(--k-blue); } .s-purple { color: var(--k-purple); }
+
+/* ---------- round buttons ---------- */
+.kbtn { position: relative; display: grid; place-items: center; border-radius: 50%; border: 0; padding: 0; box-shadow: var(--shadow-soft); flex: 0 0 auto; }
+.kbtn svg { width: 52%; height: 52%; display: block; }
+.kbtn.home { width: var(--kid-home); height: var(--kid-home); background: #fff; color: var(--teal); }
+.kbtn.next { width: var(--kid-arrow); height: var(--kid-arrow); background: var(--teal); color: #fff; }
+.kbtn.again { width: var(--kid-arrow); height: var(--kid-arrow); background: #fff; color: var(--teal); }
+.kbtn.check { width: 128px; height: 128px; background: var(--teal); color: #fff; }
+.kbtn.check.done { background: var(--k-green); }
+.hidden { visibility: hidden; }
+
+/* ---------- letter cards (K5: every tap target at least --tap-min, 90px) ---------- */
+.kcard { position: relative; aspect-ratio: 1; width: 100%; min-width: var(--tap-min); border: 0; padding: 0; border-radius: var(--radius-kid);
+  display: grid; place-items: center; box-shadow: var(--shadow-kid); font-family: var(--font-glyph); }
+.kcard b { font-weight: 700; line-height: 1; letter-spacing: .02em; font-size: clamp(2.4rem, 10vmin, 4.6rem); }
+.kcard em { position: absolute; top: 8%; right: 8%; width: 30%; max-width: 64px; min-width: 38px; aspect-ratio: 1; border-radius: 50%; background: #fff;
+  display: grid; place-items: center; font-style: normal; line-height: 1; font-size: clamp(20px, 5vmin, 36px); box-shadow: 0 2px 6px rgba(44,62,80,.18);
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+.kcard.small b { font-size: 2.2rem; font-weight: 400; }
+.kcard.sleeping { background: #E6EEED; color: var(--ink-soft); box-shadow: none; border: 2px dashed var(--ridge-3); }
+.kcard.sleeping.zzz::after { content: "😴"; position: absolute; top: -14px; right: -10px; font-size: 42px; line-height: 1;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+.kcard.hero { width: min(70vmin, calc(var(--vh) - var(--hdr) - 70px), 520px); }
+.kcard.hero b { font-size: min(26vmin, calc((var(--vh) - var(--hdr)) * .3), 11.5rem); margin-top: 6%; } /* clear of the picture disc */
+.kcard.hero em { max-width: 96px; font-size: clamp(28px, 8vmin, 56px); }
+.kcard.medium { width: clamp(112px, 24vmin, 180px); }
+.kcard.medium b { font-size: clamp(2.4rem, 8vmin, 3.6rem); }
+.kcard.chosen { transform: scale(1.08); transition: transform .25s ease; }
+
+/* ---------- the target ring (K2) and idle strength (K3) ---------- */
+.is-target {
+  box-shadow: 0 0 0 var(--ring-inner-w) #fff,
+              0 0 0 calc(var(--ring-inner-w) + var(--ring-w)) var(--gold),
+              0 0 0 calc(var(--ring-inner-w) + var(--ring-w) + var(--ring-edge-w)) var(--teal),
+              var(--shadow-kid);
+  animation: ll-pulse 1.8s ease-in-out infinite; z-index: 1;
+}
+.kid[data-idle="2"] .is-target, .kid[data-idle="3"] .is-target, .is-target.is-strong { animation: ll-pulse-strong 1s ease-in-out infinite; }
+.kid[data-idle="4"] .is-target { animation-duration: 3.2s; }
+.is-equal { animation: ll-breathe 2.4s ease-in-out infinite; }
+@keyframes ll-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+@keyframes ll-pulse-strong { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.09); } }
+@keyframes ll-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+
+/* One-shot reactions (K4). Removed by timers, never by animation events (K13). */
+.bounce { animation: ll-bounce .6s ease; }
+.wiggle { animation: ll-wiggle .6s ease; }
+.squish { animation: ll-squish .4s ease; }
+.twinkle { animation: ll-twinkle .7s ease; }
+@keyframes ll-bounce { 0%, 100% { transform: translateY(0); } 30% { transform: translateY(-18px) scale(1.04); } 60% { transform: translateY(0) scale(.98); } }
+@keyframes ll-wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-6deg); } 75% { transform: rotate(6deg); } }
+@keyframes ll-squish { 0%, 100% { transform: scale(1); } 40% { transform: scale(.92, .96); } }
+@keyframes ll-twinkle { 0%, 100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.5) rotate(20deg); } }
+.burst { position: absolute; left: 50%; top: 50%; width: 0; height: 0; pointer-events: none; }
+.burst i { position: absolute; left: -8px; top: -8px; width: 16px; height: 16px; border-radius: 50%; background: var(--c); transform: rotate(var(--a)) translateX(0); animation: ll-burst .8s ease-out forwards; }
+@keyframes ll-burst { to { transform: rotate(var(--a)) translateX(140px); opacity: 0; } }
+
+/* K13: reduced motion. The shared theme stops every animation; the target keeps a still, wider ring
+   and taps still get a visible, motionless reaction. */
+@media (prefers-reduced-motion: reduce) {
+  .kid .is-target {
+    box-shadow: 0 0 0 var(--ring-inner-w) #fff,
+                0 0 0 calc(var(--ring-inner-w) + 18px) var(--gold),
+                0 0 0 calc(var(--ring-inner-w) + 18px + var(--ring-edge-w)) var(--teal),
+                var(--shadow-kid);
+  }
+  .kid .is-equal { outline: 5px solid var(--ridge-3); outline-offset: 6px; }
+  .kid .bounce, .kid .wiggle, .kid .squish, .kid .twinkle { outline: 6px solid var(--gold); outline-offset: 8px; filter: brightness(1.08); }
+}
+
+/* ---------- screen 0: wake ---------- */
+.wake { width: 100%; height: 100%; display: grid; place-items: center; }
+.wake-ball { width: min(48vmin, 340px); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #fff 0 11%, var(--gold) 12% 100%);
+  box-shadow: 0 0 0 14px rgba(232,169,76,.22), var(--shadow-kid); animation: ll-ball 1.6s ease-in-out infinite; }
+.wake-ball.retry { animation-duration: .7s; box-shadow: 0 0 0 30px rgba(232,169,76,.4), 0 0 0 33px var(--teal), var(--shadow-kid); }
+.wake-ball.pop { transform: scale(1.25); opacity: 0; transition: transform .35s ease, opacity .35s ease; animation: none; }
+@keyframes ll-ball { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7vmin); } }
+
+/* ---------- screen 1: pick ---------- */
+.pick { width: 100%; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; padding: 26px 26px 48px; } /* room for the ring */
+.pick .ready { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(32px, 6vmin, 48px); margin: 0 auto;
+  width: min(100%, calc(var(--vh) - var(--hdr) - 60px)); }
+.pick .ready.n1 { grid-template-columns: 1fr; width: min(100%, 360px); }
+.pick .asleep { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 22px; }
+@media (orientation: landscape) {
+  .pick .ready { grid-template-columns: repeat(4, 1fr); width: min(100%, calc((var(--vh) - var(--hdr) - 60px) * 4 + 150px)); }
+  .pick .ready.n2 { grid-template-columns: repeat(2, 1fr); width: min(100%, calc((var(--vh) - var(--hdr) - 60px) * 2 + 50px)); }
+  .pick .ready.n3 { grid-template-columns: repeat(3, 1fr); width: min(100%, calc((var(--vh) - var(--hdr) - 60px) * 3 + 100px)); }
+}
+
+/* ---------- journey screens (K14: side by side in landscape, stacked in portrait, no sideways scroll) ---------- */
+.hear, .words, .goplay, .star-wrap { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.hear .kbtn.next, .words .kbtn.next { position: absolute; right: 26px; bottom: 26px; } /* clear of the edge so the ring shows */
+
+.word-card { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.word-pic, .gp-pic { position: relative; border: 0; background: #fff; border-radius: var(--radius-kid); box-shadow: var(--shadow-kid); padding: 14px 18px; }
+.pic { display: block; line-height: 1.1; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+.word-pic .pic { font-size: min(30vmin, calc((var(--vh) - var(--hdr)) * .34), 260px); }
+.word-text { border: 0; background: none; padding: 4px 14px; min-height: var(--tap-min); min-width: var(--tap-min);
+  font-family: var(--font-glyph); font-weight: 700; font-size: min(13vmin, 7rem); line-height: 1.1; color: var(--ink); }
+.fl { display: inline-block; min-width: .9em; padding: 0 .16em; margin-right: .06em; border-radius: 16px; text-align: center; }
+@media (orientation: landscape) {
+  .word-card { flex-direction: row; gap: 44px; }
+  .word-pic .pic { font-size: min(30vmin, calc((var(--vh) - var(--hdr)) * .55), 260px); }
+}
+
+.choice { display: flex; flex-direction: column; align-items: center; gap: clamp(28px, 5vmin, 44px);
+  --s: min(calc((var(--vh) - var(--hdr) - 130px) / 3), calc(100vw - 80px), 300px); }
+.pic-card { position: relative; width: var(--s); height: var(--s); min-width: var(--tap-min); min-height: var(--tap-min); border: 0; background: #fff;
+  border-radius: var(--radius-kid); box-shadow: var(--shadow-kid); display: grid; place-items: center; padding: 0; transition: opacity .3s ease; }
+.pic-card .pic { font-size: calc(var(--s) * .56); }
+.pic-card.dim { opacity: .45; }
+.pic-card.right { background: #eef5f0; }
+@media (orientation: landscape) {
+  .choice { flex-direction: row; --s: min(calc((100vw - 160px) / 3), calc(var(--vh) - var(--hdr) - 50px), 320px); }
+}
+
+.star-wrap { flex-direction: column; }
+.big-star { width: min(50vmin, calc(var(--vh) - var(--hdr) - 40px), 300px); aspect-ratio: 1; border: 0; background: none; padding: 0; animation: ll-starpop .6s ease; }
+.big-star.fly { transform: translate(var(--dx), var(--dy)) scale(.12); opacity: .7; transition: transform .7s ease-in, opacity .7s ease-in; }
+@keyframes ll-starpop { 0% { transform: scale(.3); } 70% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+.goplay { flex-direction: column; gap: clamp(24px, 5vmin, 44px); }
+.gp-main { display: flex; flex-direction: column; align-items: center; gap: clamp(20px, 4vmin, 36px); }
+.gp-pic .pic { font-size: min(28vmin, calc((var(--vh) - var(--hdr)) * .24), 180px); }
+.gp-choices { display: flex; align-items: center; justify-content: center; gap: clamp(32px, 7vmin, 56px); }
+@media (orientation: landscape) {
+  .goplay { flex-direction: row; gap: clamp(28px, 5vw, 64px); }
+  .gp-main { flex-direction: row; }
+  .gp-pic .pic { font-size: min(26vmin, calc((var(--vh) - var(--hdr)) * .5), 170px); }
+}

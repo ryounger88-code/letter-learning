@@ -1,0 +1,17 @@
+{
+  "schema": "letterlab-stages-1",
+  "stages": {
+    "toddler": {
+      "label": "Toddler",
+      "ages": [1, 3],
+      "soloPlay": false,
+      "note": "Toddler sessions start only from parent mode, with a grown-up. No toddler activity exists yet, so a toddler learner has no hand-off button."
+    },
+    "letters": {
+      "label": "Letters",
+      "ages": [3, 6],
+      "soloPlay": true,
+      "note": "Letter sounds, one letter at a time."
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "letterlab-goplay-1",
+  "prompts": [
+    {
+      "id": "l-leap",
+      "letter": "l",
+      "stages": ["letters"],
+      "ages": [3, 6],
+      "supervision": "alone",
+      "picture": "🦁",
+      "spoken": "Can you leap like a lion? Leap to {grownups} and give a big roar!",
+      "tags": ["movement"],
+      "inventory": null
+    },
+    {
+      "id": "m-monkey",
+      "letter": "m",
+      "stages": ["letters"],
+      "ages": [3, 6],
+      "supervision": "alone",
+      "picture": "🐒",
+      "spoken": "Can you move like a monkey? Swing your arms and show {grownups}!",
+      "tags": ["movement"],
+      "inventory": null
+    },
+    {
+      "id": "s-sock",
+      "letter": "s",
+      "stages": ["letters"],
+      "ages": [3, 6],
+      "supervision": "alone",
+      "picture": "🧦",
+      "spoken": "Can you find a sock? Bring it to {grownups}!",
+      "tags": ["toys"],
+      "inventory": null
+    },
+    {
+      "id": "a-ant",
+      "letter": "a",
+      "stages": ["letters"],
+      "ages": [3, 6],
+      "supervision": "alone",
+      "picture": "🐜",
+      "spoken": "Can you walk like a tiny ant? Tiny steps, all the way to {grownups}!",
+      "tags": ["movement"],
+      "inventory": null
+    }
+  ]
+}

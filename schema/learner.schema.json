@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "letterlab-learner-1",
+  "title": "Learner profile (stored on the device by js/storage.js; never in the repo)",
+  "type": "object",
+  "required": ["id", "name", "pronoun", "stage", "sessionsPerWeek", "interests", "createdAt", "updatedAt"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 40 },
+    "pronoun": { "enum": ["he", "she", "they"] },
+    "stage": { "type": "string", "description": "A key of content/stages.json." },
+    "ageBand": { "type": ["string", "null"] },
+    "sessionsPerWeek": { "type": "integer", "minimum": 1, "maximum": 14, "description": "Spacing default for later review rules. Default 4." },
+    "interests": { "type": "array", "items": { "type": "string" } },
+    "createdAt": { "type": "string" },
+    "updatedAt": { "type": "string" }
+  }
+}

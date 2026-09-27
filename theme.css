@@ -1,0 +1,370 @@
+/* =====================================================================
+   SHARED THEME — reusable stylesheet, kept identical to the copy used by
+   another site. Do not edit rules here: Letter Lab's changes live in
+   css/letterlab.css, loaded after this file. Only comments were changed.
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   1. BRAND TOKENS  (the only part you need to edit for a new brand)
+   --------------------------------------------------------------------- */
+:root{
+  /* Backgrounds */
+  --bg:        #FFFFFF;   /* page background (pure white) */
+  --bg-alt:    #F9F2F0;   /* alternating section background (rose cream) */
+
+  /* Text */
+  --ink:       #2C3E50;   /* main text (charcoal) */
+  --ink-soft:  #5C6E76;   /* secondary / muted text */
+
+  /* Brand colors */
+  --sage:      #7BA5A8;   /* PRIMARY — buttons, active nav, links */
+  --sage-ink:  #3E5A5C;   /* darker primary — headings, link text */
+  --teal:      #4A6B6D;   /* hover / pressed states */
+  --gold:      #E8A94C;   /* highlight — one accent word per headline, prices, stat numbers */
+  --coral:     #F2A6A0;   /* happy pop — badges, icon fills, CTA gradient */
+  --beige:     #E8D5B7;   /* small doses only — dividers, borders, icon backs. Never a full section bg */
+
+  /* Fonts */
+  --font-display:  'Playfair Display', Georgia, 'Times New Roman', serif;  /* headlines */
+  --font-wordmark: 'Cinzel', 'Trajan Pro', Georgia, serif;                /* logo-style name text */
+  --font-body:     'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Shape & depth */
+  --radius-pill: 999px;   /* nav, buttons, follow button — the signature shape */
+  --radius-card: 20px;
+  --radius-sm:   12px;
+  --shadow-soft: 0 8px 24px rgba(44, 62, 80, 0.08);
+  --shadow-lift: 0 8px 24px rgba(44, 62, 80, 0.10);
+  --shadow-hover:0 14px 32px rgba(44, 62, 80, 0.14);
+
+  /* Layout rhythm */
+  --container: 1200px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --section-y: clamp(64px, 9vw, 112px);   /* generous whitespace between sections */
+}
+
+
+/* ---------------------------------------------------------------------
+   2. BASE
+   --------------------------------------------------------------------- */
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  color:var(--ink);
+  /* "White that feels warm": soft, low-opacity gold/coral blooms behind everything */
+  background:
+    radial-gradient(ellipse 70% 45% at 88% 8%,  color-mix(in srgb, var(--gold) 9%, transparent), transparent 70%),
+    radial-gradient(ellipse 65% 50% at 6% 38%,  color-mix(in srgb, var(--gold) 7%, transparent), transparent 72%),
+    radial-gradient(ellipse 70% 50% at 92% 78%, color-mix(in srgb, var(--coral) 6%, transparent), transparent 72%),
+    var(--bg);
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{ max-width:100%; height:auto; display:block; }
+
+a{ color:var(--sage-ink); text-decoration-thickness:1px; text-underline-offset:3px; }
+a:hover{ color:var(--teal); }
+
+:focus-visible{ outline:3px solid var(--gold); outline-offset:3px; border-radius:6px; }
+
+
+/* ---------------------------------------------------------------------
+   3. TYPOGRAPHY
+   --------------------------------------------------------------------- */
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  color:var(--ink);
+  line-height:1.15;
+  margin:0 0 .5em;
+  text-wrap:balance;
+}
+h1{ font-size:clamp(2.4rem, 5.5vw, 4rem);   font-weight:700; }
+h2{ font-size:clamp(1.9rem, 4vw, 2.75rem);  font-weight:600; }
+h3{ font-size:clamp(1.3rem, 2.4vw, 1.6rem); font-weight:600; }
+h4{ font-size:1.15rem; font-weight:600; }
+
+p{ margin:0 0 1em; max-width:65ch; }
+
+.lead{ font-size:clamp(1.05rem, 1.6vw, 1.25rem); color:var(--ink-soft); }
+.small{ font-size:.875rem; color:var(--ink-soft); }
+
+/* One highlighted word per headline:  <h1>A <span class="accent-gold">highlighted</span> word</h1> */
+.accent-gold { color:var(--gold); }
+.accent-sage { color:var(--sage); }
+.accent-coral{ color:var(--coral); }
+
+/* Playfair italic accent line */
+.script{ font-family:var(--font-display); font-style:italic; font-weight:500; color:var(--sage-ink); }
+
+/* Small uppercase label above a heading */
+.eyebrow{
+  display:inline-block;
+  font-family:var(--font-body);
+  font-size:.8rem; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--sage-ink);
+  margin-bottom:.75rem;
+}
+
+/* Logo-style name (Cinzel) */
+.wordmark{
+  font-family:var(--font-wordmark);
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--sage-ink);
+}
+
+
+/* ---------------------------------------------------------------------
+   4. LAYOUT & SECTIONS
+   --------------------------------------------------------------------- */
+.container{ width:100%; max-width:var(--container); margin-inline:auto; padding-inline:var(--gutter); }
+
+.section    { padding-block:var(--section-y); }
+.section-alt{ padding-block:var(--section-y); background:color-mix(in srgb, var(--bg-alt) 85%, transparent); }
+.section-head{ text-align:center; margin:0 auto 3rem; max-width:720px; }
+.section-head p{ margin-inline:auto; }
+
+.grid-2{ display:grid; gap:24px; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
+.grid-3{ display:grid; gap:24px; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); }
+.grid-4{ display:grid; gap:24px; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); }
+
+/* Ombre gradient bands — the signature motif */
+.band-hero{      /* top of page: sage → coral → gold */
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--sage) 22%, var(--bg)) 0%,
+    color-mix(in srgb, var(--coral) 20%, var(--bg)) 55%,
+    color-mix(in srgb, var(--gold) 18%, var(--bg)) 100%);
+}
+.band-soft{      /* mid-page (e.g. How It Works): beige → coral → sage */
+  background:linear-gradient(135deg,
+    color-mix(in srgb, var(--beige) 40%, var(--bg)) 0%,
+    color-mix(in srgb, var(--coral) 18%, var(--bg)) 50%,
+    color-mix(in srgb, var(--sage) 20%, var(--bg)) 100%);
+}
+.band-cta{       /* closing call-to-action: solid sage → coral */
+  background:linear-gradient(120deg, var(--sage) 0%, var(--coral) 100%);
+  color:#fff;
+  text-align:center;
+}
+.band-cta h2,.band-cta p{ color:#fff; margin-inline:auto; }
+
+
+/* ---------------------------------------------------------------------
+   5. FLOATING PILL NAV
+   --------------------------------------------------------------------- */
+.navbar{
+  position:fixed;
+  top:calc(20px + env(safe-area-inset-top, 0px));
+  left:50%; transform:translateX(-50%);
+  display:flex; align-items:center; gap:6px;
+  background:var(--bg);
+  border-radius:var(--radius-pill);
+  padding:10px 18px;
+  box-shadow:var(--shadow-lift);
+  z-index:1000;
+  max-width:calc(100% - 32px);
+}
+.navbar a{
+  padding:10px 18px;
+  border-radius:var(--radius-pill);
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:500;
+  white-space:nowrap;
+  transition:background .2s ease, color .2s ease;
+}
+.navbar a:hover,
+.navbar a.active{ background:var(--sage); color:#fff; }
+.navbar .nav-logo{ padding:4px; }
+.navbar .nav-logo img{ width:36px; height:36px; border-radius:50%; }
+
+/* Mobile bottom bar (replaces the pill nav on phones) */
+.bottom-bar{
+  display:none;
+  position:fixed; left:0; right:0; bottom:0;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  background:var(--bg);
+  box-shadow:0 -6px 20px rgba(44,62,80,.10);
+  gap:10px; z-index:1000;
+}
+.bottom-bar .btn{ flex:1; }
+
+
+/* ---------------------------------------------------------------------
+   6. BUTTONS  (all pill-shaped)
+   --------------------------------------------------------------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  min-height:48px;
+  padding:12px 28px;
+  border-radius:var(--radius-pill);
+  border:2px solid transparent;
+  font-family:var(--font-body); font-size:1rem; font-weight:500;
+  text-decoration:none; cursor:pointer;
+  transition:background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+.btn:hover{ transform:translateY(-2px); }
+
+.btn-primary{ background:var(--sage); color:#fff; box-shadow:var(--shadow-soft); }
+.btn-primary:hover{ background:var(--teal); color:#fff; }
+
+.btn-outline{ background:transparent; color:var(--sage-ink); border-color:var(--sage); }
+.btn-outline:hover{ background:var(--sage); color:#fff; }
+
+.btn-gold{ background:var(--gold); color:var(--ink); box-shadow:var(--shadow-soft); }
+.btn-gold:hover{ background:color-mix(in srgb, var(--gold) 85%, var(--ink)); color:var(--ink); }
+
+.btn-white{ background:#fff; color:var(--sage-ink); }   /* use on the .band-cta gradient */
+.btn-white:hover{ color:var(--teal); }
+
+/* Instagram-style follow button — deliberately matches the nav pill */
+.follow-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--bg);
+  border:1px solid var(--beige);
+  border-radius:var(--radius-pill);
+  padding:12px 24px;
+  font-weight:600; color:var(--ink); text-decoration:none;
+  box-shadow:var(--shadow-soft);
+  transition:transform .15s ease;
+}
+.follow-pill:hover{ transform:translateY(-2px); color:var(--ink); }
+
+
+/* ---------------------------------------------------------------------
+   7. CARDS, BADGES, STATS, STEPS
+   --------------------------------------------------------------------- */
+.card{
+  background:var(--bg);
+  border-radius:var(--radius-card);
+  padding:28px;
+  box-shadow:var(--shadow-soft);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-hover); }
+
+/* Photo card — 4:5 portrait crop */
+.card-photo{ padding:0; overflow:hidden; }
+.card-photo img{ width:100%; aspect-ratio:4/5; object-fit:cover; }
+.card-photo .card-body{ padding:20px 24px 24px; }
+
+/* Highlighted card (e.g. most popular tier) */
+.card-featured{ border:2px solid var(--gold); position:relative; }
+
+.price{ font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--gold); }
+
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:var(--radius-pill);
+  background:var(--coral); color:var(--ink);
+  font-size:.75rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+}
+.badge-soft{ background:color-mix(in srgb, var(--beige) 60%, var(--bg)); color:var(--sage-ink); }
+
+/* Stat row: big colored number + label. Colors rotate sage / gold / coral */
+.stats{ display:flex; flex-wrap:wrap; justify-content:center; gap:clamp(24px, 6vw, 72px); text-align:center; }
+.stat-num{ font-family:var(--font-display); font-size:clamp(2.4rem, 5vw, 3.2rem); font-weight:700; line-height:1; }
+.stat:nth-child(3n+1) .stat-num{ color:var(--sage); }
+.stat:nth-child(3n+2) .stat-num{ color:var(--gold); }
+.stat:nth-child(3n+3) .stat-num{ color:var(--coral); }
+.stat-label{ margin-top:8px; font-size:.9rem; font-weight:500; color:var(--ink-soft); }
+
+/* Numbered circle-badge steps (How It Works) */
+.steps{ display:grid; gap:28px; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); counter-reset:step; }
+.step{ text-align:center; }
+.step-num{
+  width:56px; height:56px; margin:0 auto 16px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  background:var(--sage); color:#fff;
+  font-family:var(--font-display); font-size:1.4rem; font-weight:700;
+  box-shadow:var(--shadow-soft);
+}
+.step:nth-child(4n+2) .step-num{ background:var(--gold); color:var(--ink); }
+.step:nth-child(4n+3) .step-num{ background:var(--coral); color:var(--ink); }
+.step:nth-child(4n+4) .step-num{ background:var(--teal); }
+
+/* Thin beige divider */
+.divider{ height:1px; border:0; background:var(--beige); margin-block:2rem; }
+
+
+/* ---------------------------------------------------------------------
+   8. FORMS
+   --------------------------------------------------------------------- */
+.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:18px; }
+.field label{ font-weight:500; font-size:.95rem; }
+.input, .select, .textarea{
+  width:100%;
+  font:inherit; color:var(--ink);
+  background:var(--bg);
+  border:1.5px solid var(--beige);
+  border-radius:var(--radius-sm);
+  padding:12px 14px;
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+.textarea{ min-height:140px; resize:vertical; }
+.input:focus, .select:focus, .textarea:focus{
+  outline:none;
+  border-color:var(--sage);
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--sage) 22%, transparent);
+}
+.hint{ font-size:.85rem; font-style:italic; color:var(--ink-soft); }
+
+
+/* ---------------------------------------------------------------------
+   9. FOOTER
+   --------------------------------------------------------------------- */
+.footer{
+  padding-block:56px 40px;
+  background:var(--bg-alt);
+  border-top:1px solid var(--beige);
+  font-size:.95rem;
+}
+.footer a{ color:var(--ink); text-decoration:none; }
+.footer a:hover{ color:var(--teal); }
+
+
+/* ---------------------------------------------------------------------
+   10. MOTION — gentle float-in (plays once, then stays still)
+   --------------------------------------------------------------------- */
+@keyframes floatUp{
+  0%  { transform:translateY(0) rotate(0deg); opacity:0; }
+  15% { opacity:1; }
+  60% { transform:translateY(-140px) rotate(-4deg); }
+  80% { transform:translateY(-158px) rotate(3deg); }
+  100%{ transform:translateY(-150px) rotate(0deg); opacity:1; }
+}
+@keyframes fadeRise{
+  from{ opacity:0; transform:translateY(14px); }
+  to  { opacity:1; transform:none; }
+}
+.fade-rise{ animation:fadeRise .7s ease-out both; }
+
+
+/* ---------------------------------------------------------------------
+   11. RESPONSIVE
+   --------------------------------------------------------------------- */
+@media (max-width:780px){
+  .navbar{ display:none; }          /* pill nav hides on phones... */
+  .bottom-bar{ display:flex; }      /* ...and the bottom bar takes over */
+  body{ padding-bottom:76px; background-attachment:scroll; }
+}
+@media (max-width:640px){
+  .card{ padding:22px; }
+  .section-head{ margin-bottom:2rem; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}

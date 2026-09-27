@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "letterlab-kid-1",
+  "title": "Kid-mode words, per letter (content/kid-words.json)",
+  "description": "The shape Astra hands over. The first word is the anchor: the app calls the letter 'the <anchor> letter'. kidReady is added when a parent switches a letter on after Voice check.",
+  "type": "object",
+  "required": ["schema", "letters"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "letterlab-kid-1" },
+    "letters": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-z]$": {
+          "type": "object",
+          "required": ["kidSound", "kidSays", "words"],
+          "additionalProperties": false,
+          "properties": {
+            "kidReady": { "type": "boolean" },
+            "kidSound": { "type": "string", "minLength": 1, "maxLength": 40 },
+            "kidSays": { "type": "string", "minLength": 1, "maxLength": 120 },
+            "flag": { "type": "string" },
+            "note": { "type": "string" },
+            "words": {
+              "type": "array", "minItems": 4, "maxItems": 6,
+              "items": {
+                "type": "object",
+                "required": ["word", "picture"],
+                "additionalProperties": false,
+                "properties": {
+                  "word": { "type": "string", "pattern": "^[a-z]+$" },
+                  "picture": { "type": "string", "minLength": 1 },
+                  "spoken": { "type": "string", "minLength": 1, "maxLength": 140 },
+                  "flag": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

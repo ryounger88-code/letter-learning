@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "letterlab-stages-1",
+  "title": "Learner stages (content/stages.json)",
+  "type": "object",
+  "required": ["schema", "stages"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "letterlab-stages-1" },
+    "stages": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-z-]+$": {
+          "type": "object",
+          "required": ["label", "ages", "soloPlay"],
+          "additionalProperties": false,
+          "properties": {
+            "label": { "type": "string" },
+            "ages": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "integer" } },
+            "soloPlay": { "type": "boolean", "description": "false: sessions start only from parent mode, with a grown-up, and the app never reopens straight into kid mode." },
+            "note": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

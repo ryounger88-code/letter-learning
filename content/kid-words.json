@@ -1,0 +1,52 @@
+{
+  "schema": "letterlab-kid-1",
+  "letters": {
+    "l": {
+      "kidReady": true,
+      "kidSound": "lllll",
+      "kidSays": "Lllll. Tongue up, like a lion.",
+      "flag": "kidSound may be spelled out as 'el el el' by some voices. Tune in Voice check.",
+      "words": [
+        { "word": "lion", "picture": "🦁" },
+        { "word": "leaf", "picture": "🍃" },
+        { "word": "lemon", "picture": "🍋" },
+        { "word": "ladybug", "picture": "🐞" }
+      ]
+    },
+    "m": {
+      "kidReady": true,
+      "kidSound": "mmmmm",
+      "kidSays": "Mmmmm. Lips together, like yummy food.",
+      "words": [
+        { "word": "moon", "picture": "🌙" },
+        { "word": "mouse", "picture": "🐭" },
+        { "word": "milk", "picture": "🥛" },
+        { "word": "monkey", "picture": "🐒" }
+      ]
+    },
+    "s": {
+      "kidReady": true,
+      "kidSound": "sssss",
+      "kidSays": "Sssss. Like a snake.",
+      "flag": "kidSound may be read as 'ess ess ess'. Tune in Voice check.",
+      "words": [
+        { "word": "sun", "picture": "☀️" },
+        { "word": "sock", "picture": "🧦" },
+        { "word": "sandwich", "picture": "🥪" },
+        { "word": "seal", "picture": "🦭" }
+      ]
+    },
+    "a": {
+      "kidReady": true,
+      "kidSound": "ah",
+      "kidSays": "Ah, ah, apple. Open wide!",
+      "flag": "Least confident string in the app: 'ah' is close to, but not, the short a in apple. Try other spellings in Voice check.",
+      "words": [
+        { "word": "apple", "picture": "🍎" },
+        { "word": "ant", "picture": "🐜" },
+        { "word": "ambulance", "picture": "🚑" },
+        { "word": "alligator", "picture": "🐊" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "letterlab-event-1",
+  "title": "One interaction event (append-only log, js/storage.js)",
+  "description": "Events are never edited. Logs from two devices merge by concatenating and de-duplicating on id.",
+  "type": "object",
+  "required": ["id", "v", "learnerId", "deviceId", "at", "type"],
+  "properties": {
+    "id": { "type": "string" },
+    "v": { "const": 1 },
+    "learnerId": { "type": "string" },
+    "deviceId": { "type": "string" },
+    "sessionId": { "type": ["string", "null"] },
+    "at": { "type": "string", "description": "ISO 8601 time" },
+    "type": { "enum": ["session.start", "session.end", "letter.open", "letter.left", "activity.start", "activity.end", "tap.empty", "findit.result", "letter.star", "goplay.shown", "goplay.done", "goplay.skipped", "speech.check", "parent.session"] },
+    "letter": { "type": ["string", "null"], "pattern": "^[a-z]$" },
+    "activity": { "type": ["string", "null"] },
+    "data": { "type": "object", "description": "findit.result: { target, options[], attempts[{word, letter, correct, msFromPromptEnd, idleLevel}], firstTry, hinted, msToFirstTap, idleLevelBeforeFirstTap }" }
+  }
+}
