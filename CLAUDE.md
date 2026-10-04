@@ -44,6 +44,7 @@ browser. On a phone on the same Wi-Fi, open `http://<computer-ip>:8765/`.
 | `js/kid/` | Kid-mode controller, idle ladder, UI parts, activity registry, `activities/*.js` |
 | `js/parent/` | Parent mode, Voice check, install hint |
 | `tools/validate.mjs`, `tests/` | Validator and unit tests |
+| `docs/` | Reviewer notes (deliberate deviations), Stage 4 watch list (testing with the child) |
 
 ## Content
 
@@ -125,6 +126,10 @@ Access** (Settings → Accessibility → Guided Access, triple-click to start), 
 - Pages serves `main` from the repo root. Commit and push, then wait a minute.
 - **Privacy, before every push:** search the tree and history for family names, places and the
   other site's name. Keep that list of terms off the repo; the repo is public.
+- **Commit identity:** every commit uses a GitHub noreply address, never a personal email. Set it
+  once per clone with `git config user.email "<id>+<login>@users.noreply.github.com"` (shown under
+  GitHub → Settings → Emails). Keep "Keep my email addresses private" and "Block command line
+  pushes that expose my email" switched on, so a slip is refused at push time.
 
 ## Learned the hard way
 
