@@ -4,6 +4,12 @@
 //   python3 -m http.server 8765        (in the repo root, in another terminal)
 //   node tools/e2e.mjs [http://localhost:8765/] [--shots dir]
 //
+// To test the real site address without the network, serve the repo over local HTTPS and map
+// the hostname to it (the browser then sees the true origin, e.g. https://learning.f3rst.com/):
+//   E2E_IGNORE_CERT=1 E2E_CHROMIUM_ARGS='["--ignore-certificate-errors",
+//     "--host-resolver-rules=MAP learning.f3rst.com:443 127.0.0.1:8443","--no-proxy-server"]'
+//   node tools/e2e.mjs https://learning.f3rst.com/
+//
 // Needs Playwright with a Chromium build (not a project dependency; nothing to install for the app).
 
 import { createRequire } from 'node:module';
@@ -19,6 +25,8 @@ const BASE = process.argv.find((a) => a.startsWith('http')) || 'http://localhost
 const shotsIdx = process.argv.indexOf('--shots');
 const SHOTS = shotsIdx > 0 ? process.argv[shotsIdx + 1] : null;
 if (SHOTS) fs.mkdirSync(SHOTS, { recursive: true });
+const CTX = process.env.E2E_IGNORE_CERT ? { ignoreHTTPSErrors: true } : {};
+const LAUNCH_ARGS = process.env.E2E_CHROMIUM_ARGS ? JSON.parse(process.env.E2E_CHROMIUM_ARGS) : [];
 
 const VIEWPORTS = {
   'phone-portrait': { width: 390, height: 844, isMobile: true, hasTouch: true },
@@ -109,7 +117,7 @@ async function setupParent(page) {
 }
 
 async function runViewport(browser, vpName) {
-  const ctx = await browser.newContext({ viewport: { width: VIEWPORTS[vpName].width, height: VIEWPORTS[vpName].height }, isMobile: VIEWPORTS[vpName].isMobile, hasTouch: true, serviceWorkers: 'block' });
+  const ctx = await browser.newContext({ ...CTX, viewport: { width: VIEWPORTS[vpName].width, height: VIEWPORTS[vpName].height }, isMobile: VIEWPORTS[vpName].isMobile, hasTouch: true, serviceWorkers: 'block' });
   await ctx.addInitScript(STUBS);
   const page = await ctx.newPage();
   const errors = [];
@@ -244,7 +252,7 @@ async function runViewport(browser, vpName) {
 
 async function idleTimings(browser) {
   // Fake clock: measure each idle step from the moment the previous line finished speaking.
-  const ctx = await browser.newContext({ viewport: { width: 820, height: 1180 }, hasTouch: true, serviceWorkers: 'block' });
+  const ctx = await browser.newContext({ ...CTX, viewport: { width: 820, height: 1180 }, hasTouch: true, serviceWorkers: 'block' });
   await ctx.addInitScript(STUBS);
   const page = await ctx.newPage();
   await page.clock.install({ time: new Date('2026-09-27T10:00:00Z') });
@@ -279,9 +287,50 @@ async function idleTimings(browser) {
   await ctx.close();
 }
 
+async function installCheck(browser) {
+  // The site must work wherever it is served: manifest, service worker and every request
+  // resolve against the page's own address, and nothing reaches for another host.
+  const ctx = await browser.newContext({ ...CTX, viewport: { width: 820, height: 1180 }, hasTouch: true });
+  await ctx.addInitScript(STUBS);
+  const page = await ctx.newPage();
+  const origin = new URL(BASE).origin;
+  const foreign = [];
+  page.on('request', (r) => { if (!r.url().startsWith(origin) && !r.url().startsWith('data:')) foreign.push(r.url()); });
+  await setupParent(page);
+  const cdp = await ctx.newCDPSession(page);
+  const m = await cdp.send('Page.getAppManifest');
+  const data = JSON.parse(m.data || '{}');
+  check(`install: manifest found at ${m.url}`, m.url === new URL('manifest.webmanifest', BASE).href && !m.errors.length, m.errors.map((e) => e.message).join(' | '));
+  check('install: start_url resolves to the site address', new URL(data.start_url, m.url).href === BASE, new URL(data.start_url, m.url).href);
+  check('install: scope resolves to the site address', new URL(data.scope, m.url).href === BASE, new URL(data.scope, m.url).href);
+  const reg = await page.evaluate(async () => { const r = await navigator.serviceWorker.ready; return { scope: r.scope, script: r.active && r.active.scriptURL }; });
+  check('install: service worker controls the whole site', reg.scope === BASE && reg.script === new URL('sw.js', BASE).href, JSON.stringify(reg));
+  await page.reload();
+  await page.waitForSelector('.nextup');
+  const inst = await cdp.send('Page.getInstallabilityErrors');
+  check('install: Chromium says the app is installable', inst.installabilityErrors.length === 0, inst.installabilityErrors.map((e) => e.errorId).join(', '));
+  const cached = await page.evaluate(async () => { const out = []; for (const k of await caches.keys()) for (const r of await (await caches.open(k)).keys()) out.push(r.url); return out; });
+  const plans = JSON.parse(fs.readFileSync(new URL('../content/plans.json', import.meta.url), 'utf8'));
+  const want = ['', 'index.html', 'manifest.webmanifest', 'js/main.js', 'css/kid.css', 'fonts/Andika-Bold.woff2', 'content/kid-words.json', ...Object.values(plans.activities)].map((p) => new URL(p, BASE).href);
+  check('install: offline cache holds the app at this address', want.every((u) => cached.includes(u)), want.filter((u) => !cached.includes(u)).join(', '));
+  check('install: every cached file is from this site', cached.every((u) => u.startsWith(origin)), cached.filter((u) => !u.startsWith(origin)).join(', '));
+  await ctx.setOffline(true);
+  await page.goto(new URL(data.start_url, m.url).href);
+  await page.waitForSelector('.nextup', { timeout: 10000 });
+  await page.click('[data-hand]');
+  await page.waitForSelector('.wake-ball');
+  await page.mouse.click(400, 600);
+  await page.waitForSelector('.kid[data-screen="pick"] .kcard.is-target', { timeout: 8000 });
+  await tap(page, '.pick .ready .kcard[data-letter="m"]');
+  await page.waitForSelector('.hear .kcard.k-red', { timeout: 8000 });
+  check('install: offline launch from start_url plays a letter', true);
+  check('install: no request left the site', foreign.length === 0, foreign.slice(0, 5).join(', '));
+  await ctx.close();
+}
+
 async function goPlayIdle(browser) {
   // K3a: on go-play the prompt is said once, repeated once at ~30s, then silence.
-  const ctx = await browser.newContext({ viewport: { width: 820, height: 1180 }, hasTouch: true, serviceWorkers: 'block' });
+  const ctx = await browser.newContext({ ...CTX, viewport: { width: 820, height: 1180 }, hasTouch: true, serviceWorkers: 'block' });
   await ctx.addInitScript(STUBS);
   const page = await ctx.newPage();
   await page.clock.install(); // before load, so the app's timers are fake from the start
@@ -314,7 +363,7 @@ async function goPlayIdle(browser) {
 }
 
 async function offlineAndVoiceCheck(browser) {
-  const ctx = await browser.newContext({ viewport: { width: 820, height: 1180 }, hasTouch: true });
+  const ctx = await browser.newContext({ ...CTX, viewport: { width: 820, height: 1180 }, hasTouch: true });
   await ctx.addInitScript(STUBS);
   const page = await ctx.newPage();
   const errors = [];
@@ -341,11 +390,12 @@ async function offlineAndVoiceCheck(browser) {
   await ctx.close();
 }
 
-const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+const browser = await chromium.launch({ args: LAUNCH_ARGS, ...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}) });
 for (const vp of Object.keys(VIEWPORTS)) {
   try { await runViewport(browser, vp); } catch (e) { check(`${vp}: flow completed`, false, e.message.split('\n')[0]); }
 }
 try { await idleTimings(browser); } catch (e) { check('idle timings completed', false, e.message.split('\n')[0]); }
+try { await installCheck(browser); } catch (e) { check('install check completed', false, e.message.split('\n')[0]); }
 try { await offlineAndVoiceCheck(browser); } catch (e) { check('offline/voice check completed', false, e.message.split('\n')[0]); }
 try { await goPlayIdle(browser); } catch (e) { check('go-play idle completed', false, e.message.split('\n')[0]); }
 await browser.close();
