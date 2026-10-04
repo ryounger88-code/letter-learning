@@ -123,7 +123,12 @@ Access** (Settings → Accessibility → Guided Access, triple-click to start), 
 
 - **Bump `VERSION` in `sw.js` on every release**, or installed copies keep old files. If you add
   a file, add it to `CORE` in `sw.js` (activity modules come from `plans.json`).
-- Pages serves `main` from the repo root. Commit and push, then wait a minute.
+- Pages serves `main` from the repo root at **https://learning.f3rst.com/** (custom domain, set by
+  the `CNAME` file; never delete or rename it, or the site falls back to the github.io address).
+  Every path in the app is relative (`./sw.js`, `css/…`, manifest `start_url`/`scope` `./`), so it
+  works at a domain root or in a subfolder. Never write root-absolute (`/js/…`) or full-host URLs.
+- Commit and push, then wait a minute. Pull first: GitHub's website can commit to `main` too
+  (setting the domain wrote `CNAME`).
 - **Privacy, before every push:** search the tree and history for family names, places and the
   other site's name. Keep that list of terms off the repo; the repo is public.
 - **Commit identity:** every commit uses a GitHub noreply address, never a personal email. Set it
@@ -140,6 +145,9 @@ Access** (Settings → Accessibility → Guided Access, triple-click to start), 
 - `theme.css` has its own `.steps` and `.card:hover` lift; parent mode uses `.ll-steps` and turns
   the lift off for content cards.
 - The ring needs room: 21px outside the card. Keep padding and gaps bigger than that, or it's clipped.
+- To test the real site address offline, map the hostname to a local HTTPS server (see the top of
+  `tools/e2e.mjs`), and clear the proxy variables for that run. Chromium otherwise sends the request
+  through the container's proxy.
 
 ## Where this is going
 
